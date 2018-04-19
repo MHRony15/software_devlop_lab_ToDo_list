@@ -16,6 +16,66 @@ class todo{
         void manual();
         void check();
 };
+void  todo :: add(){
+        io.open("todo.txt",std::ios::app);
+        t_name();
+        getchar();
+        getline(std::cin,task_name);
+        t_description();
+        getline(std::cin,task_description);
+        t_date();
+        getline(std::cin,task_date);
+        io<<task_name<<std::endl;
+        io<<task_description<<std::endl;
+        io<<task_date<<std::endl;
+        io.close();
+        manual();
+
+}
+void todo :: manual(){
+    std::cout<<"\n\nSelect an option\n";
+    std::cout<<"1.Add\n";
+    std::cout<<"2.Show\n";
+    std::cout<<"3.Delete\n";
+    std::cout<<"4.Exit\n";
+    check();
+}
+void todo :: check(){
+
+    std::cin>>tmp;
+    if(tmp==1){
+        add();
+    }
+    if(tmp==2){
+        show();
+    }
+    if(tmp==3){
+        delet();
+    }
+    if(tmp==4){
+        exit(1);
+    }
+}
+void  todo :: show(){
+        io.open("todo.txt");
+        int i=1;
+        std::cout<<"\n\n";
+        while(!io.eof()){
+            getline (io,task_name);
+            getline (io,task_description);
+            getline (io,task_date);
+            if(io.eof()){
+                io.close();
+                manual();
+            }
+            std::cout<<i<<std::endl;
+            std::cout<<task_name<<"\t\t\t\t"<<task_date<<std::endl;
+            std::cout<<task_description<<std::endl;
+            i++;
+        }
+        io.close();
+        manual();
+}
 int main(){
     todo my;
     my.show();
