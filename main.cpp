@@ -106,6 +106,9 @@ void todo :: t_name(){
 void todo :: t_description(){
     std::cout<<"Enter Task Description:\n";
 }
+void todo :: t_date(){
+    std::cout<<"Enter Task Date:\n";
+}
 int main(){
     todo my;
     my.show();
