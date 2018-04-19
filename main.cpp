@@ -103,6 +103,9 @@ void todo :: delet(){
 void todo :: t_name(){
     std::cout<<"Enter Task Name:\n";
 }
+void todo :: t_description(){
+    std::cout<<"Enter Task Description:\n";
+}
 int main(){
     todo my;
     my.show();
