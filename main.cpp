@@ -100,6 +100,9 @@ void todo :: delet(){
     rename("temp.txt","todo.txt");
     manual();
 }
+void todo :: t_name(){
+    std::cout<<"Enter Task Name:\n";
+}
 int main(){
     todo my;
     my.show();
