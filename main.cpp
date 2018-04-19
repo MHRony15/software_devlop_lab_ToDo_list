@@ -16,6 +16,22 @@ class todo{
         void manual();
         void check();
 };
+void  todo :: add(){
+        io.open("todo.txt",std::ios::app);
+        t_name();
+        getchar();
+        getline(std::cin,task_name);
+        t_description();
+        getline(std::cin,task_description);
+        t_date();
+        getline(std::cin,task_date);
+        io<<task_name<<std::endl;
+        io<<task_description<<std::endl;
+        io<<task_date<<std::endl;
+        io.close();
+        manual();
+
+}
 int main(){
     todo my;
     my.show();
