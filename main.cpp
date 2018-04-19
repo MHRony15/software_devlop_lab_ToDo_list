@@ -40,6 +40,22 @@ void todo :: manual(){
     std::cout<<"4.Exit\n";
     check();
 }
+void todo :: check(){
+
+    std::cin>>tmp;
+    if(tmp==1){
+        add();
+    }
+    if(tmp==2){
+        show();
+    }
+    if(tmp==3){
+        //delet();
+    }
+    if(tmp==4){
+        exit(1);
+    }
+}
 int main(){
     todo my;
     my.show();
